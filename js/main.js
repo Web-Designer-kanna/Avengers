@@ -33,7 +33,7 @@ var slideleft = {
   easing:'ease',
 };
 
-ScrollReveal().reveal('.fade-up', slideUp)
+ScrollReveal().reveal('.image', slideUp)
 ScrollReveal().reveal('.text-content', slideleft)
 
 
