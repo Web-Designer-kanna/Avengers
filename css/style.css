@@ -720,28 +720,47 @@ header nav .menu .bar{
  }
 }
 
-@media all and (max-width:350px){
+@media all and (max-width:300px){
+  header nav .menu .bar{
+    width: 20px;
+  }
+  .banner-content {
+    left: 20px;
+    bottom: 80px;
+  }
   .banner-content p {
-    max-width: 300px;
+    max-width: 250px;
   }
   .collections .items .item .box .label{
     margin: 0;
    padding: 0px 5px;
    }
    header nav ul.active{
-    width:300px;
+    width:250px;
     left: 24px;
   }
   .timeline::before{
-    margin-left: -30px;
+    margin-left: -28px;
   }
   .timeline-container .box{
-    width: 15px;
-    height: 15px;
-     left: 41.3%;
+    width: 13px;
+    height: 13px;
+     left: 40%;
+     top: 26px;
    }
    .timeline img{
     transform: translate(-22px,-35px);
   }
+  .timeline::before{
+   
+    width: 5px;
+  }
+  .swiper-container{
+    padding: 50px 20px;
+    margin-left: 0;
+   }
+   .swiper-container .details p{
+    width: 250px;
+   }
 
 }

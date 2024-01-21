@@ -17,7 +17,7 @@ function filterItems(){
     Items.forEach((item,index)=>{
         if(searchBox.value==""){
             return 
-        }else if(item.dataset.name==searchBox.value.trim()){
+        }else if(item.dataset.name.trim()==searchBox.value.trim().toLowerCase()){
             Items[index].style.display="block";
         }
         else{
