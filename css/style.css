@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=Rubik:wght@300;400;500;600;700;800&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -18,8 +18,9 @@
   --w: #fff;
   --shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
+
 header {
-  width: 100vw;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,7 +28,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 111;
 }
 header.active{
   background-color: var(--w);
@@ -35,6 +36,10 @@ header.active{
 }
 header.active nav ul li a{
   color: var(--b);
+}
+header nav{
+  display: flex;
+  align-items: center;
 }
 header.active nav ul li a:hover{
   color: var(--bg);
@@ -53,9 +58,63 @@ header nav ul li a {
   text-transform: capitalize;
   transition: 0.4s;
   font-weight: 400;
+  font-size: 15px;
 }
 header nav ul li a:hover {
   color: var(--bg);
+}
+header nav ul .fa-close{
+  display: none;
+}
+header nav ul{position: relative;}
+header nav ul.active{
+  width:380px;
+  position: absolute;
+  left: 23px;
+  top: 55px;
+  display: block;
+  background-color: #63697a;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 30px;
+}
+header nav ul.active li{
+  padding: 10px 0px;
+  margin: 0;
+  font-size: 14px;
+}
+header nav ul.active li a{
+  color: var(--w);
+}
+header nav ul.active .fa-close{
+  display: block;
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--w);
+  cursor: pointer;
+}
+header.active nav .menu .bar{
+  background-color: var(--b);
+  border-radius: 5px;
+}
+header nav .menu{
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 2px;
+  display: none;
+}
+header nav .menu .bar{
+  width: 25px;
+  height: 3px;
+  background-color: var(--w);
+  border-radius: 5px;
+  overflow: hidden;
 }
 .top-screen {
   width: 35px;
@@ -66,7 +125,7 @@ header nav ul li a:hover {
   color: var(--w);
   text-align: center;
   position: fixed;
-  right: 40px;
+  right: 10px;
   bottom: 10px;
   cursor: pointer;
   z-index: 12;
@@ -94,7 +153,7 @@ header nav ul li a:hover {
   z-index: 13;
   position: absolute;
   left: 60px;
-  top: 200px;
+  bottom: 100px;
   color: var(--w);
 }
 .banner-content h1 {
@@ -138,6 +197,7 @@ header nav ul li a:hover {
   width: 90vw;
   margin: 0px auto;
   display: flex;
+  overflow: hidden;
 }
 .container .row .col{
   width: 100%;
@@ -207,93 +267,19 @@ header nav ul li a:hover {
     transform: translateX(-100%);
   }
 }
-/*.hero-container{
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-}
-.hero-container .row{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(/assets/hulk-bg.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.hero-container .row .col{
-  width: 90vw;
-  display: flex;
- justify-content: center;
-  text-align: center;
-  flex-direction: column;
-}
-.hero-container .row .col .hero-image{
-  width: 140px;
-  margin: 0px auto;
-  flex: none;
-  height: 140px;
-  background-color: var(--w);
-  border: 4px solid var(--w);
-  border-radius: 50%;
-  position: relative;
-  overflow: hidden;
-}
-.hero-container .row .col .hero-image img{
-  width: 100px;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-}
-.hero-container .row .col .content{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 0px auto;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 20px;
-  text-align: center;
-}
-.hero-container .row .col .content .item{
-  width: 140px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  background-color: var(--w);
-  padding: 10px;
-  border-radius: 2px;
-}
-.hero-container .row .col .content .item img{
-  flex: none;
-  width:100%;
-  height: 150px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 2px;
-}
-.hero-container .row .col .content .item .name{
-  text-transform: capitalize;
-  font-size: var(--f2);
-  padding: 10px 0;
-  font-weight:600;
-}
-
-*/
 
 .hero-container{
   width: 100%;
   background-color: #2e364a;
-  padding: 100px;
+  display: flex;
+  justify-content: center;
 }
 .timeline{
   width: 90vw;
   margin: 0px auto;
   position: relative;
   text-align: center;
-  padding-top: 60px;
+  padding-top: 90px;
   padding-bottom: 30px;
   overflow: hidden;
 }
@@ -305,7 +291,7 @@ header nav ul li a:hover {
   z-index: 15;
   object-fit: cover;
   object-position: center top;
-  transform: translate(-50px);
+  transform: translate(-25px,-35px);
   border: 2px solid var(--w);
 }
 .timeline img:hover ~ .character{
@@ -344,12 +330,12 @@ header nav ul li a:hover {
   width: 6px;
   height: 100%;
   background-color: var(--w);
-  left: 50%;
+  left: 52%;
   margin-left: -50px;
 }
 .timeline-container{position: relative;text-align: left;}
 .timeline-container .item{
-  width: 40%;
+  width: 45%;
   background-color: var(--w);
   padding: 10px 20px;
   position: relative;
@@ -357,7 +343,7 @@ header nav ul li a:hover {
   font-size: var(--f2);
 }
 .right-item{
-  left: 52%;
+  left: 51%;
 }
 .left-item{
   left:0;
@@ -368,7 +354,7 @@ header nav ul li a:hover {
  border-radius: 50%;
  background-color: var(--w);
  position: absolute;
-  left: 45.3%;
+  left: 47.3%;
   top: 25px;
   z-index: 10;
 }
@@ -402,5 +388,326 @@ header nav ul li a:hover {
 }
 
 
+.swiper-container{
+  width: 100vw;
+  height: 100vh;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ display: flex;
+ justify-content: flex-end;
+ flex-direction: column;
+ color: var(--w);
+ padding: 80px 60px;
+ margin-left: -10px;
+}
+ .swiper-container h1{
+  font-size: 50px;
+  text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
+}
+.swiper-container .details i{
+  color: yellow;
+  font-size: 12px;
+}
+.swiper-container .details div{
+  text-transform: capitalize;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+.swiper-container .details div span{
+  color: var(--bg);
+  font-weight: 500;
+  font-size: 15px;
+}
+.swiper-container .details p{
+  width: 600px;
+  text-transform: capitalize;
+  font-size: var(--f2);
+  margin: 8px 0px;
+}
+.swiper-container .details .btn{
+  text-decoration: none;
+  color: var(--w);
+  padding: 5px 25px;
+  background-color: var(--bg);
+  display: inline-block;
+  margin-top: 10px;
+  font-size: var(--f2);
+}
 
 
+.collections .search-box{
+  width: 600px;
+  height: 50px;
+  margin: 0px auto;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+}
+.collections .search-box input{
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: 1px solid #ccc;
+  padding: 0 20px;
+  border-radius: 25px 0px 0px 25px;
+}
+.collections .search-box .search-btn{
+  width: 100px;
+  height: 100%;
+  line-height: 50px;
+  color: var(--w);
+  background-color: var(--bg);
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0px 25px 25px 0px;
+}
+.collections .items{
+  width: 100%;
+  padding: 40px 0;
+}
+.collections .items .item{
+  width: 90vw;
+  margin: 0px auto;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-gap: 15px;
+}
+.collections .items .item .box{
+  width: 100%;
+  height: 400px;
+  background-color: var(--w);
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.collections .items .item .box img{
+  width: 100%;
+  height: 85%;
+  object-fit: cover;
+}
+.collections .items .item .box .label{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  font-size: 13px;
+}
+.collections .items .item .box .label div:nth-child(1){
+  text-transform: capitalize;
+}
+.collections .items .item .box .label div i{
+  color: yellow;
+  margin-right: 5px;
+}
+
+
+@media all and (max-width:768px){
+  header{
+    padding: 5px 15px;
+  }
+  header .logo img {
+    width: 90px;
+  }
+  .banner-content {
+    left: 25px;
+    bottom: 20px;
+  }
+  .banner-content h1 {
+    font-size: 40px;
+  }
+  .banner-content h1 span:nth-child(2) {
+    font-size: 20px;
+  }
+  .banner-content p {
+    font-size: 13px;
+  }
+  .banner-content a {
+    padding: 7px 15px;
+    font-size: 13px;
+  }
+  .top-screen{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+  .hero-container{
+    padding-left: 55px;
+  }
+  .timeline-container .item{
+    width: 40%;
+  }
+  .timeline::before{
+  margin-left: -47px;
+}
+.timeline img{
+  transform: translate(-33px,-35px);
+}
+.timeline-container .box{
+   left: 44.2%;
+ }
+ .swiper-container{
+ padding: 40px 25px;
+}
+ .swiper-container h1{
+  font-size: 30px;
+}
+.swiper-container .details i{
+  font-size: 11px;
+}
+.swiper-container .details div{
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+.swiper-container .details div span{
+  font-size: 14px;
+}
+.swiper-container .details p{
+  font-size: 14px;
+}
+.swiper-container .details .btn{
+  padding: 5px 15px;
+  margin-top: 5px;
+  font-size: 14px;
+}
+.collections .search-box{
+  width: 400px;
+  height: 45px;
+}
+.collections .search-box .search-btn{
+  line-height: 45px;
+  font-size: 14px;
+}
+.collections .items .item{
+  grid-template-columns: repeat(3,1fr);
+}
+.collections .items .item .box{
+  height: 300px;
+  background-color: var(--w);
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.collections .items .item .box img{
+  height: 80%;
+}
+
+}
+
+
+
+@media all and (max-width:425px){
+  header nav .menu{
+    display: flex;
+  }
+  header nav ul{
+    display: none;
+  }
+  header{
+    padding: 5px 10px;
+  }
+  header .logo{
+    margin-top: 10px;
+  }
+  header .logo img {
+    width: 70px;
+  }
+  .banner-content {
+    left: 20px;
+    bottom: 20px;
+  }
+  .banner-content h1 {
+    font-size: 30px;
+  }
+  .banner-content h1 span:nth-child(2) {
+    font-size: 15px;
+  }
+  .banner-content p {
+    max-width: 350px;
+    font-size: 12px;
+  }
+  .banner-content a {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  .top-screen{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+  .hero-container{
+    padding-left: 45px;
+  }
+  .timeline img{
+    width: 80px;
+    height: 80px;
+  }
+  .timeline-container .item{
+    width: 35%;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+  }
+  .timeline-container .item p{
+    display: none;
+  }
+  .timeline::before{
+  margin-left: -40px;
+}
+.timeline img{
+  transform: translate(-31px,-35px);
+}
+.timeline-container .box{
+  width: 15px;
+  height: 15px;
+   left: 40.4%;
+ }
+ .timeline-container .left-arrow{
+  right: -9px;
+}
+.timeline-container .right-arrow{
+  left: -9px;
+}
+.swiper-container{
+  padding: 20px 15px;
+ }
+  .swiper-container h1{
+   font-size: 20px;
+ }
+ .swiper-container .details i{
+   font-size: 10px;
+ }
+ .swiper-container .details div{
+   font-size: 11px;
+ }
+ .swiper-container .details div span{
+   font-size: 13px;
+ }
+ .swiper-container .details p{
+  max-width: 300px;
+   font-size: 13px;
+ }
+ .swiper-container .details .btn{
+   padding: 5px 10px;
+   margin-top: 5px;
+   font-size: 12px;
+ }
+ .collections .search-box{
+   width: 300px;
+   height: 40px;
+ }
+ .collections .search-box .search-btn{
+   line-height: 40px;
+   font-size: 13px;
+ }
+ .collections .items .mobile-responsive{
+   grid-template-columns: repeat(2,1fr);
+ }
+ .collections .items .item .box .label{
+  font-size: 12px;
+ }
+}

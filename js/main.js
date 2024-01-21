@@ -36,6 +36,15 @@ var slideleft = {
 ScrollReveal().reveal('.image', slideUp)
 ScrollReveal().reveal('.text-content', slideleft)
 
+const menuBtn=document.querySelector(".menu");
+const navBar=document.querySelector("header nav ul");
+const closeBtn=document.querySelector("header nav ul .fa-close");
 
+menuBtn.addEventListener("click",()=>{
+  navBar.classList.toggle("active");
+})
+closeBtn.addEventListener("click",()=>{
+  navBar.classList.toggle("active");
+})
 
 
